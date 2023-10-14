@@ -53,6 +53,78 @@ box-shadow: 3px 3px 6px #fcdada;
 }
 
 /* Fim estilo carousel */
+/* Inicio estilo media >> Mobile */
+@media (max-width: 600px){
+        #menu {
+            display: block;
+            position: absolute;
+            top: 70px;
+            right: 0px;
+            background: white;
+            transition: 0.6s;
+            z-index: 1000;
+            height: 0px;
+            padding-left: 5px;
+            visibility: hidden;
+            overflow-y: hidden;
+        }
+        #menu li {
+            padding-top: 30px;
+            padding-bottom: 0px;
+            margin: 0 1rem;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+
+        }
+        #nav.actuve #menu {
+            height: calc(100vh - 70px);
+            visibility: visible;
+            overflow-y: hidden;
+        }
+        #btn-mobile {
+            display: flex;
+            padding: 0.5 1rem;
+            font: 1rem;
+            border: none;
+            cursor: pointer;
+            gap: 0.5rem;
+        }
+        #hamburger {
+            border-top: 2px solid;
+            /* Para aumentar ou diminuir a espessura da linha do hamburger */
+            width: 30px;
+            /* Para alterar a largura do hambuger */
+            color: #003f91;
+            /* Para alterar a cor do hambuger */
+        }
+        #hambuger::after,
+        #hamburger::before {
+            content: '';
+            display: block;
+            width: 30px;
+            /* Altera a largura do hamburger, juntamente com o width anterior */
+            height: 2px;
+            background: currentColor;
+            margin-top: 4px;
+            /* Altera o espaçamento, entre as linhas do hamburger */
+            position: relative;
+            border-top: 2px solid;
+            /* Para aumentar ou diminuir a espessura da linha */
+            }
+            #nav.active #hambuger {
+                border-top-color: transparent;
+            }
+            #nav.active #hamburger::before {
+                transform: rotate(135deg);
+            }
+            #nav.active #hamburger::after {
+                transform: rotate(-135deg);
+                top: -7px;
+            }
+
+
+}
+
+/* Fim estilo media >> Mobile */
 /* Inicio estilo Banner home */
 /* Para aplicar estilos na CLASS > utilize o ponto [ . ] antes do objeto */
 /* Para aplicar estilos na CLASS > utilize o hashtag [ # ] antes do objeto */
@@ -62,7 +134,7 @@ box-shadow: 3px 3px 6px #fcdada;
     margin-top: 10px;
     padding: 50px;
     background-color: #eeeff0;
-    box-shadow: 3px 3px 6px #fcdada;
+    box-shadow: 3px 3px 6px #f2e5e5;
 }
 .section-banner-home img {
     max-height: 400px;
@@ -103,3 +175,192 @@ color: rgb(255, 255, 255);
 
 
 /* Fim estilo Banner home */
+/* Inicio estilo destaque */
+.destaque h2 {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.destaque p {
+    width: 77%;
+    text-align: center;
+    font-size: 14px;
+    margin: 30px auto;
+}
+.destaque figcaption {
+    font-size: 13px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+.destaque #Saiba-mais {
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    background: #dad8e6;
+    margin: 30px 0px;
+    width: 25%;
+}
+.destaque .col-6 img:hover {
+    box-shadow: 4px 4px 6px #acaa9ae5;
+    transition: 0.3s;
+}
+/* Fim estilo destaque */
+
+
+/* Inicio estilo novidades */
+.novidades .texto-body {
+    width: 80%;
+    margin: 70px auto;
+}
+.novidades p {
+    color: #000;
+}
+.novidades a {
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    background: #dad8e6;
+    margin: 30px 0px;
+    width: 25%;
+}
+/* Fim estilo novidades */
+
+
+/* Inicio estilo galeria */
+.galeria {
+    margin: 60px auto 20px;      /* os 4 valores no margin = top / right / botton / left > Ex:60px , 60px , 60px , 60px */
+}
+.galeria .container {
+    margin-left: 11%;
+}
+.galeria h2 {
+    text-align: center;
+    font-size: 24px;
+}
+.galeria p {
+    text-align: center;
+    width: 50%;
+    margin: 14px auto 50px;
+}
+.galeria .gallery {
+    width: 30%;
+    margin: 14px auto 50px;
+}
+.galeria .gallery img {
+    width: 80%;
+    height: 80%;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    display: block;
+}
+.galeria .gallery img:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #919191;
+}
+/* Fim estilo galeria */
+/* Inicio Whatssap */
+.Whatsapp {
+    position: fixed;
+    top: 800px;
+    right: 20px;
+    z-index: 200;
+}
+.Whatsapp img {
+    height: 70px;
+}
+/* Inicio efeito pulse */
+.Whatsapp .pulse {
+    animation: pulse 0.7s infinite;
+    margin: 0 auto;
+    display: table;
+    margin-top: 50px;
+    animation-direction: alternate ;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+        -webkit-filter: brightness(100%);
+    }
+    100% {
+        -webkit-transform: scale(1.1);
+        -webkit-filter: brightness(100%);
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        filter: brightness(100%);
+    }
+    100% {
+        transform: scale(1.1);
+        filter: brightness(100%);
+    }
+    
+}
+
+/* Fim efeito pulse */
+
+
+/* Fim Whatssap */
+/* Inicio estilo footer (rodape) */
+.rodape {
+    padding: 50px 50px 0;
+}
+.rodape .container #logo-rodape img{
+    height: 50%;
+    width: 50%;
+    padding: 10px;
+    transition: transform .3s;
+    display: block;
+}
+.rodape .container #logo-rodape:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.rodape .info-contato p {
+    margin: 0;
+}
+.rodape .linkFooter {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    margin-left: 0.7rem;
+}
+.rodape .linkFooter:hover {
+    font-weight: bold;
+}
+.rodape .redes-sociais {
+    display: inline-block;
+}
+.rodape .redes-sociais img {
+    width: 50px;
+    height: 50px;
+    padding-left: 0;
+    margin-left: 0.8rem;
+    transition: transform .3s;
+    border-radius: 15px;
+    /* boder-radius = arredondando as extremidades da forma */
+}
+.rodape .redes-sociais img:hover {
+    z-index: 1;
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.446);
+}
+.rodape p.direitos {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Fim estilo footer (rodape) */
