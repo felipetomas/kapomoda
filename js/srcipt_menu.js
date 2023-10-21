@@ -4,15 +4,15 @@ const btnMobile = document.getElementById('btn-mobile');
 // const >> declara a nossa variavel, no uso decorrer do codigo
 
 function toggleMenu(event) {
-    if (event.type === 'touchstart') event.preventdefault();
+    if (event.type === 'touchstart') event.preventDefault();
     const nav = document.getElementById('nav');
     nav.classList.toggle('active');
     const active = nav.classList.contains('active');
-    event.currentTarget.setAtrribute('aria-expanded', active);
+    event.currentTarget.setAttribute('aria-expanded', active);
     if (active){
-        event.currentTarget.setAtrribute('arial-label', 'Fechar Menu');
+        event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
     } else {
-        event.currentTarget.setAtrribute('arial-label', 'Abrir Menu');
+        event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
     }
 }
 btnMobile.addEventListener('click', toggleMenu)
